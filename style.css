@@ -98,3 +98,41 @@ ul li {
 p {
     line-height: 1.5;
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white !important;
+  }
+}
+
+@media print {
+  section, div, .card, .box, .container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+}
+
+@media print {
+  nav, footer, .download-btn, .github-link {
+    display: none !important;
+  }
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: auto;
+  }
+}
