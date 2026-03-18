@@ -98,3 +98,64 @@ ul li {
 p {
     line-height: 1.5;
 }
+
+@media print {
+    /* --- USTAWIENIA STRONY --- */
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    html, body {
+        width: 210mm;
+        height: auto;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        background: white !important;
+    }
+
+    /* --- UKRYWANIE ELEMENTÓW NIEPOTRZEBNYCH W PDF --- */
+    nav, footer, .download-btn, .github-link {
+        display: none !important;
+    }
+
+  /* --- UKRYWANIE ADRESÓW LINKÓW I KOLORÓW --- */
+  a[href]:after,
+  a[href^="mailto"]:after,
+  a[href^="tel"]:after {
+    content: "" !important;
+  }
+  
+  a, a:visited {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* --- ZAPOBIEGANIE BRZYDKIM PODZIAŁOM STRON --- */
+  section, div, .card, .box, .container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-inside: avoid;
+  }
+
+  ol > li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12px;
+  }
+
+  .hobbies > li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 16px;
+  }
+
+  img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
