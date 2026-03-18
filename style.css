@@ -136,3 +136,9 @@ p {
     height: auto;
   }
 }
+
+@media print {
+  .skills-section {
+    page-break-inside: avoid;
+  }
+}
