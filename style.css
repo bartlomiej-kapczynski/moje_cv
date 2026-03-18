@@ -136,3 +136,32 @@ p {
     height: auto;
   }
 }
+
+@media print {
+
+  /* Nie dziel pojedynczych pozycji doświadczenia */
+  ol > li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12px;
+  }
+
+  /* Nie dziel hobby (każdy element to całość) */
+  .hobbies > li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 16px;
+  }
+
+  /* Nie dziel sekcji nagłówkowych */
+  section {
+    page-break-before: auto;
+    page-break-after: auto;
+  }
+
+  /* Zapobiegaj łamaniu obrazków i tekstu obok */
+  img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
