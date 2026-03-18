@@ -165,3 +165,28 @@ p {
     break-inside: avoid;
   }
 }
+
+@media print {
+
+  /* Usuwa dopiski typu (https://...) */
+  a[href]:after {
+    content: "" !important;
+  }
+
+  /* Usuwa dopiski dla mailto i tel */
+  a[href^="mailto"]:after,
+  a[href^="tel"]:after {
+    content: "" !important;
+  }
+
+  /* Usuwa kolorowanie i podkreślenia linków */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Usuwa fioletowy kolor odwiedzonych linków */
+  a:visited {
+    color: inherit !important;
+  }
+}
