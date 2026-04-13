@@ -95,6 +95,10 @@ ul li {
     color: grey;
 }
 
+.icon {
+    color: #9b5de5;
+}
+
 p {
     line-height: 1.5;
 }
